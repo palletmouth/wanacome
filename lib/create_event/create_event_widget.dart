@@ -1,10 +1,12 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/created_event_widget.dart';
+import '../event_details/event_details_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import '../flutter_flow/custom_functions.dart' as functions;
 import '../flutter_flow/random_data_util.dart' as random_data;
@@ -127,9 +129,13 @@ class _CreateEventWidgetState extends State<CreateEventWidget> {
                                           'CREATE_EVENT_PAGE_Icon_kz7zlvre_ON_TAP');
                                       if (FFAppState().eventSaved == true) {
                                         logFirebaseEvent('Icon_navigate_to');
-
-                                        context.pushNamed('HomePage');
-
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomePageWidget(),
+                                          ),
+                                        );
                                         logFirebaseEvent('Icon_custom_action');
                                         await actions.displayNewEventDate(
                                           datePicked2!,
@@ -171,9 +177,13 @@ class _CreateEventWidgetState extends State<CreateEventWidget> {
                                                 false;
                                         if (confirmDialogResponse) {
                                           logFirebaseEvent('Icon_navigate_to');
-
-                                          context.pushNamed('HomePage');
-
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomePageWidget(),
+                                            ),
+                                          );
                                           logFirebaseEvent(
                                               'Icon_custom_action');
                                           await actions.displayNewEventDate(
@@ -1655,29 +1665,22 @@ class _CreateEventWidgetState extends State<CreateEventWidget> {
                                                                               1000));
                                                                       logFirebaseEvent(
                                                                           'ButtonUpdate_navigate_to');
-
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'EventDetails',
-                                                                        queryParams:
-                                                                            {
-                                                                          'selectedEventID':
-                                                                              serializeParam(
-                                                                            FFAppState().NewEventID,
-                                                                            ParamType.String,
+                                                                      await Navigator
+                                                                          .push(
+                                                                        context,
+                                                                        PageTransition(
+                                                                          type:
+                                                                              PageTransitionType.bottomToTop,
+                                                                          duration:
+                                                                              Duration(milliseconds: 300),
+                                                                          reverseDuration:
+                                                                              Duration(milliseconds: 300),
+                                                                          child:
+                                                                              EventDetailsWidget(
+                                                                            selectedEventID:
+                                                                                FFAppState().NewEventID,
                                                                           ),
-                                                                        }.withoutNulls,
-                                                                        extra: <
-                                                                            String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.bottomToTop,
-                                                                          ),
-                                                                        },
+                                                                        ),
                                                                       );
                                                                     } else {
                                                                       logFirebaseEvent(

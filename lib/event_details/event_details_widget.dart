@@ -1,8 +1,10 @@
 import '../backend/backend.dart';
+import '../edit_event/edit_event_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
@@ -128,8 +130,12 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                     logFirebaseEvent(
                                         'EVENT_DETAILS_Column_iuzne0qp_ON_TAP');
                                     logFirebaseEvent('Column_navigate_to');
-
-                                    context.pushNamed('HomePage');
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomePageWidget(),
+                                      ),
+                                    );
                                   },
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -139,8 +145,13 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                           logFirebaseEvent(
                                               'EVENT_DETAILS_PAGE_Icon_k7yj56ia_ON_TAP');
                                           logFirebaseEvent('Icon_navigate_to');
-
-                                          context.pushNamed('HomePage');
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomePageWidget(),
+                                            ),
+                                          );
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios,
@@ -1373,17 +1384,15 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                             'EVENT_DETAILS_PAGE_EDIT_BTN_ON_TAP');
                                                         logFirebaseEvent(
                                                             'Button_navigate_to');
-
-                                                        context.pushNamed(
-                                                          'editEvent',
-                                                          queryParams: {
-                                                            'eventID':
-                                                                serializeParam(
-                                                              widget
+                                                        await Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                EditEventWidget(
+                                                              eventID: widget
                                                                   .selectedEventID,
-                                                              ParamType.String,
                                                             ),
-                                                          }.withoutNulls,
+                                                          ),
                                                         );
                                                       },
                                                       text: 'Edit',

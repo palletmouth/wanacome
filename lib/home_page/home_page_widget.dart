@@ -1,5 +1,8 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../create_event/create_event_widget.dart';
+import '../edit_profile/edit_profile_widget.dart';
+import '../event_details/event_details_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -389,17 +392,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         'HOME_PAGE_PAGE_Column_xo37gzft_ON_TAP');
                                                     logFirebaseEvent(
                                                         'Column_navigate_to');
-
-                                                    context.pushNamed(
-                                                      'EventDetails',
-                                                      queryParams: {
-                                                        'selectedEventID':
-                                                            serializeParam(
-                                                          listViewEventsRecord
-                                                              .eventId,
-                                                          ParamType.String,
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            EventDetailsWidget(
+                                                          selectedEventID:
+                                                              listViewEventsRecord
+                                                                  .eventId,
                                                         ),
-                                                      }.withoutNulls,
+                                                      ),
                                                     );
                                                   },
                                                   child: Column(
@@ -999,9 +1001,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .selectionClick();
                                                         logFirebaseEvent(
                                                             'IconButton_navigate_to');
-
-                                                        context.pushNamed(
-                                                            'CreateEvent');
+                                                        await Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CreateEventWidget(),
+                                                          ),
+                                                        );
                                                       },
                                                     ),
                                                   ),
@@ -1028,9 +1034,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         .selectionClick();
                                                     logFirebaseEvent(
                                                         'Icon_navigate_to');
-
-                                                    context.pushNamed(
-                                                        'EditProfile');
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            EditProfileWidget(),
+                                                      ),
+                                                    );
                                                   },
                                                   child: Icon(
                                                     Icons.tag_faces_sharp,

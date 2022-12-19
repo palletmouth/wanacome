@@ -3,6 +3,7 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -128,8 +129,13 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                           logFirebaseEvent(
                                               'EDIT_EVENT_PAGE_Icon_f9lr8s63_ON_TAP');
                                           logFirebaseEvent('Icon_navigate_to');
-
-                                          context.pushNamed('HomePage');
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomePageWidget(),
+                                            ),
+                                          );
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios,
@@ -955,9 +961,13 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                                               .delete();
                                                           logFirebaseEvent(
                                                               'ButtonUpdate_navigate_to');
-
-                                                          context.pushNamed(
-                                                              'HomePage');
+                                                          await Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  HomePageWidget(),
+                                                            ),
+                                                          );
                                                         } else {
                                                           return;
                                                         }

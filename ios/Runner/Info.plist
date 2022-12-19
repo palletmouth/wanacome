@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSSupportsOpeningDocumentsInPlace</key>
-    	<true/>
-    	<key>UIFileSharingEnabled</key>
-    	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -37,19 +33,7 @@
             </array>
         </dict>
 
-        <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>wanacome</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-        <string>com.wanacome.mobile</string>
-        </array>
-        </dict>
     </array>
-    <key>FlutterDeepLinkingEnabled</key>
-    <true/>
 
 
 	<key>CFBundleVersion</key>

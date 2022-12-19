@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../seeyouthere/seeyouthere_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
@@ -877,34 +878,28 @@ class _RsWidgetState extends State<RsWidget> {
                                                       }
                                                       logFirebaseEvent(
                                                           'Button_navigate_to');
-
-                                                      context.pushNamed(
-                                                        'Seeyouthere',
-                                                        queryParams: {
-                                                          'attending':
-                                                              serializeParam(
-                                                            true,
-                                                            ParamType.bool,
-                                                          ),
-                                                          'message':
-                                                              serializeParam(
-                                                            rsEventsRecord!
+                                                      await Navigator.push(
+                                                        context,
+                                                        PageTransition(
+                                                          type:
+                                                              PageTransitionType
+                                                                  .scale,
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  300),
+                                                          reverseDuration:
+                                                              Duration(
+                                                                  milliseconds:
+                                                                      300),
+                                                          child:
+                                                              SeeyouthereWidget(
+                                                            attending: true,
+                                                            message: rsEventsRecord!
                                                                 .attendingMessage,
-                                                            ParamType.String,
                                                           ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .scale,
-                                                            alignment: Alignment
-                                                                .bottomCenter,
-                                                          ),
-                                                        },
+                                                        ),
                                                       );
                                                     } else {
                                                       logFirebaseEvent(
@@ -929,34 +924,28 @@ class _RsWidgetState extends State<RsWidget> {
                                                       );
                                                       logFirebaseEvent(
                                                           'Button_navigate_to');
-
-                                                      context.pushNamed(
-                                                        'Seeyouthere',
-                                                        queryParams: {
-                                                          'attending':
-                                                              serializeParam(
-                                                            true,
-                                                            ParamType.bool,
-                                                          ),
-                                                          'message':
-                                                              serializeParam(
-                                                            rsEventsRecord!
+                                                      await Navigator.push(
+                                                        context,
+                                                        PageTransition(
+                                                          type:
+                                                              PageTransitionType
+                                                                  .scale,
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  300),
+                                                          reverseDuration:
+                                                              Duration(
+                                                                  milliseconds:
+                                                                      300),
+                                                          child:
+                                                              SeeyouthereWidget(
+                                                            attending: true,
+                                                            message: rsEventsRecord!
                                                                 .notAttendingMessage,
-                                                            ParamType.String,
                                                           ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .scale,
-                                                            alignment: Alignment
-                                                                .bottomCenter,
-                                                          ),
-                                                        },
+                                                        ),
                                                       );
                                                     }
                                                   } else {
@@ -1139,7 +1128,7 @@ class _RsWidgetState extends State<RsWidget> {
                                               'RS_PAGE_BACK_BTN_ON_TAP');
                                           logFirebaseEvent(
                                               'Button_navigate_back');
-                                          context.pop();
+                                          Navigator.pop(context);
                                         },
                                         text: 'Back',
                                         icon: Icon(

@@ -1,11 +1,16 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
+import '../create_event/create_event_widget.dart';
+import '../event_details/event_details_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
+import '../home_page/home_page_widget.dart';
+import '../login_user/login_user_widget.dart';
+import '../register_user/register_user_widget.dart';
 import 'dart:async';
 import '../custom_code/actions/index.dart' as actions;
 import '../flutter_flow/custom_functions.dart' as functions;
@@ -1107,17 +1112,18 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                           if (confirmDialogResponse) {
                                                             logFirebaseEvent(
                                                                 'ButtonUpdate_auth');
-                                                            GoRouter.of(context)
-                                                                .prepareAuthEvent();
                                                             await signOut();
                                                             logFirebaseEvent(
                                                                 'ButtonUpdate_navigate_to');
-
-                                                            context
-                                                                .pushNamedAuth(
-                                                                    'LoginUser',
-                                                                    mounted);
-
+                                                            await Navigator
+                                                                .push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        LoginUserWidget(),
+                                                              ),
+                                                            );
                                                             return;
                                                           } else {
                                                             return;
@@ -1372,18 +1378,18 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                                   'EDIT_PROFILE_Container_45yeiplv_ON_TAP');
                                                               logFirebaseEvent(
                                                                   'Container_navigate_to');
-
-                                                              context.pushNamed(
-                                                                'EventDetails',
-                                                                queryParams: {
-                                                                  'selectedEventID':
-                                                                      serializeParam(
-                                                                    listViewEventsRecord
-                                                                        .eventId,
-                                                                    ParamType
-                                                                        .String,
+                                                              await Navigator
+                                                                  .push(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          EventDetailsWidget(
+                                                                    selectedEventID:
+                                                                        listViewEventsRecord
+                                                                            .eventId,
                                                                   ),
-                                                                }.withoutNulls,
+                                                                ),
                                                               );
                                                             },
                                                             child: Material(
@@ -2014,10 +2020,15 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                                     );
                                                                     logFirebaseEvent(
                                                                         'Button_navigate_to');
-
-                                                                    context.pushNamed(
-                                                                        'RegisterUser');
-
+                                                                    await Navigator
+                                                                        .push(
+                                                                      context,
+                                                                      MaterialPageRoute(
+                                                                        builder:
+                                                                            (context) =>
+                                                                                RegisterUserWidget(),
+                                                                      ),
+                                                                    );
                                                                     return;
                                                                   } else {
                                                                     logFirebaseEvent(
@@ -2144,9 +2155,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                         .selectionClick();
                                                     logFirebaseEvent(
                                                         'Icon_navigate_to');
-
-                                                    context
-                                                        .pushNamed('HomePage');
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            HomePageWidget(),
+                                                      ),
+                                                    );
                                                   },
                                                   child: Icon(
                                                     Icons.house_outlined,
@@ -2218,9 +2233,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             .selectionClick();
                                                         logFirebaseEvent(
                                                             'IconButton_navigate_to');
-
-                                                        context.pushNamed(
-                                                            'CreateEvent');
+                                                        await Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CreateEventWidget(),
+                                                          ),
+                                                        );
                                                       },
                                                     ),
                                                   ),

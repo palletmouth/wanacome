@@ -4,6 +4,8 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
+import '../register_user/register_user_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -368,7 +370,6 @@ class _LoginUserWidgetState extends State<LoginUserWidget>
                                       logFirebaseEvent(
                                           'LOGIN_USER_PAGE_ButtonLogin_ON_TAP');
                                       logFirebaseEvent('ButtonLogin_auth');
-                                      GoRouter.of(context).prepareAuthEvent();
 
                                       final user = await signInWithEmail(
                                         context,
@@ -379,7 +380,14 @@ class _LoginUserWidgetState extends State<LoginUserWidget>
                                         return;
                                       }
 
-                                      context.goNamedAuth('HomePage', mounted);
+                                      await Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomePageWidget(),
+                                        ),
+                                        (r) => false,
+                                      );
                                     },
                                     text: 'Login',
                                     options: FFButtonOptions(
@@ -421,8 +429,13 @@ class _LoginUserWidgetState extends State<LoginUserWidget>
                                       'LOGIN_USER_ButtonCreateAccount_ON_TAP');
                                   logFirebaseEvent(
                                       'ButtonCreateAccount_navigate_to');
-
-                                  context.pushNamed('RegisterUser');
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          RegisterUserWidget(),
+                                    ),
+                                  );
                                 },
                                 text: 'Create Account',
                                 options: FFButtonOptions(

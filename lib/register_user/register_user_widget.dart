@@ -1,8 +1,10 @@
 import '../auth/auth_util.dart';
+import '../edit_profile/edit_profile_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../login_user/login_user_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -415,7 +417,6 @@ class _RegisterUserWidgetState extends State<RegisterUserWidget> {
                                       logFirebaseEvent(
                                           'REGISTER_USER_PAGE_ButtonLogin_ON_TAP');
                                       logFirebaseEvent('ButtonLogin_auth');
-                                      GoRouter.of(context).prepareAuthEvent();
                                       if (passwordController?.text !=
                                           passwordconfController?.text) {
                                         ScaffoldMessenger.of(context)
@@ -440,9 +441,13 @@ class _RegisterUserWidgetState extends State<RegisterUserWidget> {
 
                                       logFirebaseEvent(
                                           'ButtonLogin_navigate_to');
-
-                                      context.pushNamedAuth(
-                                          'EditProfile', mounted);
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditProfileWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Register',
                                     options: FFButtonOptions(
@@ -477,8 +482,12 @@ class _RegisterUserWidgetState extends State<RegisterUserWidget> {
                                       'REGISTER_USER_ButtonCreateAccount_ON_TAP');
                                   logFirebaseEvent(
                                       'ButtonCreateAccount_navigate_to');
-
-                                  context.pushNamed('LoginUser');
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginUserWidget(),
+                                    ),
+                                  );
                                 },
                                 text: 'Already Have Account',
                                 options: FFButtonOptions(
