@@ -1,0 +1,48 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "events",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "event_host",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "event_date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "invitation_responses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "eventid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "attending",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "rsvp_date",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}

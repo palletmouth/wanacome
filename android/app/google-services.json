@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "212169077547",
+    "project_id": "wanacome-b5110",
+    "storage_bucket": "wanacome-b5110.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212169077547:android:cb641772fd3743168ecb6e",
+        "android_client_info": {
+          "package_name": "com.wanacome.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212169077547-mb590v19f6nalngdon213lno6h1fi4iv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wanacome.mobile",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "212169077547-8usprqj6m5slb6h7uaj4ieh61f5mp8dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnstEfYqDQxhv-sUgsmUxYSdJ4wJJVATQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212169077547-8usprqj6m5slb6h7uaj4ieh61f5mp8dn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "212169077547-upcgc9i1fqcbq344obgb1ecn95jv8m3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wanacome.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
