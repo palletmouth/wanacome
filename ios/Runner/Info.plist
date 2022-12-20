@@ -45,12 +45,8 @@
       <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
       <string>In order to upload media, this app requires permission to access the photo library.</string>
-	<key>NSMicrophoneUsageDescription</key>
-      <string>In order to record invitations - Please enable your microphone.</string>
 	<key>PermissionGroupNotification</key>
       <string>Please enable microphone so you know who can come to your party</string>
-	<key>LSSupportsOpeningDocumentsInPlace</key>
-      <string>Can We Have Access To Files? This Is To Export Your Invite List, If You Need To</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>fetch</string>
